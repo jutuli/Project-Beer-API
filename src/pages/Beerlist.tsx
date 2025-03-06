@@ -20,14 +20,33 @@ const BeerList: React.FC = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+    <div className="max-w-4xl mx-auto p-4">
       {beers.map((beer) => (
-        <div key={beer._id} className="border p-4">
-          <img src={beer.image_url} alt={beer.name} className="w-full h-auto mb-4" />
-          <h2 className="text-xl font-bold">{beer.name}</h2>
-          <p>{beer.tagline}</p>
-          <p>Created by: {beer.contributed_by}</p>
-          <Link to={`/beers/${beer._id}`} className="text-blue-500">Details</Link>
+        <div key={beer._id} className="flex items-center py-6 border-b last:border-b-0">
+          {/* Bild */}
+          <img
+            src={beer.image_url}
+            alt={beer.name}
+            className="h-32 w-16 object-contain mr-6"
+          />
+
+          {/* Textbereich */}
+          <div className="flex-1">
+            <h2 className="text-xl font-bold text-gray-800">{beer.name}</h2>
+            <p className="text-yellow-600 font-semibold">{beer.tagline}</p>
+            <p className="text-gray-500 text-sm mb-2">
+              Created by: {beer.contributed_by.split("<")[0]}
+            </p>
+            <p className="text-gray-700 text-xs uppercase font-bold">Keg Only</p>
+          </div>
+
+          {/* Details Button */}
+          <Link
+            to={`/beers/${beer._id}`}
+            className="px-6 py-2 bg-amber-400 text-white rounded-full shadow hover:bg-amber-500"
+          >
+            Details
+          </Link>
         </div>
       ))}
     </div>

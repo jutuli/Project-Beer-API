@@ -2,12 +2,12 @@ import {
   createBrowserRouter,
   Route,
   createRoutesFromElements,
-  RouterProvider,
+  RouterProvider, 
 } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import Home from "./pages/Home";
 import BeerDetail from "./pages/Beerdetail";
-import BeerList from "./pages/Beerlist";
+import BeerList from "./pages/BeerList";
 import RandomBeer from "./pages/RandomBeer";
 
 function App() {

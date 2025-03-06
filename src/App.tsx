@@ -16,7 +16,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="/beers" element={<BeerList />} />
-        <Route path="/beers:id" element={<BeerDetail />} />
+        <Route path="/beers/:id" element={<BeerDetail />} />
         <Route path="/beers/random-beer" element={<RandomBeer />} />
       </Route>,
     ),

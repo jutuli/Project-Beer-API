@@ -1,1 +1,9 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+@font-face {
+  font-family: "RobotoSlab";
+  src: url("./assets/fonts/RobotoSlab-VariableFont_wght.ttf");
+}
+
+body {
+  @apply font-[robotoslab];
+}
